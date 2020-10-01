@@ -3,6 +3,9 @@ body {
   font-size: 16px;
   line-height: 1;
 }
+.container{
+  margin-bottom: 3%;
+}
 
 textarea{
   background: transparent;
