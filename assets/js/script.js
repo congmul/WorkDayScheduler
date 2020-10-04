@@ -2,18 +2,7 @@ $(document).ready(function () {
 
     // Display current day.
     $("#currentDay").text(moment().format('h:mm a, dddd, MMMM Do YYYY'));
-    var currentTime = moment().format('LT');
-    var time01 = '1:00 AM';
-    var time02 = '10:00 AM';
-    // console.log(currentTime);
-    // console.log( parseInt(currentTime));
-    console.log(moment().format('k'));
-    console.log(moment().format('k') < 3);
-    // if(currentTime ){
-
-    // }else{
-
-    // }
+  
     // Add <table> in Container
     var tableEl = $("<table>");
     $(".container").append(tableEl);
@@ -34,13 +23,15 @@ $(document).ready(function () {
                 case 0: tdEl.attr("class", "hour");
                     tdEl.attr("time-index", timeCount);
                     tdEl.css({ "width": "10%", "text-align": "right", "padding": "10px" });
-                    // Display Time ex) 9:00 AM , 10:00AM... 
-                    if(timeCount < 13){
+                    // Display Time ex) 9:00 AM , 10:00AM...
+                    if(timeCount < 12){
                         tdEl.text(timeCount+":00 AM");   
+                    }else if(timeCount === 12){
+                        tdEl.text(timeCount+":00 PM");  
                     }else{
                         tdEl.text((parseInt(timeCount)-12)+":00 PM"); 
                     }               
-                    timeCount++;
+                    
                     // Take timeName to use it as Key of localStorage 
                     var timeIndex = tdEl.text();
                     break;
@@ -51,8 +42,7 @@ $(document).ready(function () {
                     //If statament depend on Hour , moment().format('k') - 24 hours format
                     if(timeCount < moment().format('k')){
                         tdEl.css("background", "lightgray");
-                        console.log(timeIndex);
-                    }else if(timeCount === moment().format('k')){
+                    }else if(timeCount == parseInt(moment().format('k'))){
                         tdEl.css("background", "rgb(255,150,150)");
                     }else{
                         tdEl.css("background", "lightblue");
@@ -60,6 +50,9 @@ $(document).ready(function () {
                     // Save Description of Plan depanding on Keys
                     textareaEl.val(localStorage.getItem(timeIndex));
                     tdEl.append(textareaEl);
+
+                    // Time increment
+                    timeCount++;
                     break;
                 case 2:
                     var saveBtnEl = $("<button>");
@@ -71,6 +64,7 @@ $(document).ready(function () {
                     saveBtnEl.append(iEl);
                     break;
             }
+            
             trEl.append(tdEl);
         }
     }
