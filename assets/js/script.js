@@ -1,7 +1,11 @@
 $(document).ready(function () {
 
     // Display current day.
-    $("#currentDay").text(moment().format('h:mm a, dddd, MMMM Do YYYY'));
+
+    setInterval(displayCurrentClock, 1000);
+    function displayCurrentClock() {
+    $("#currentDay").text(moment().format('h:mm:ss a, dddd, MMMM Do YYYY'));
+    }
   
     // Add <table> in Container
     var tableEl = $("<table>");
