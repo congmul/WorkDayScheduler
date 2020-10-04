@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  
 }
 .container{
   margin-bottom: 3%;
@@ -82,15 +83,15 @@ table{
   
 }
 .currentTimeContainer{
-  justify-content: center;
+  display:flex;
+  justify-content: center; 
   align-items: center;
-  margin: 0;
 }
 .clock{
   width: 120px;
   height: 120px;
   margin-top: 50px;
-  left: 45%;
+  right: 0%;
   border: 5px solid #000;
   background-color: rgb(177, 236, 255);
   border-radius: 50%;
@@ -116,7 +117,6 @@ table{
   position: absolute;
   bottom: 50%;
   left: 50.5%;
-  /* border: .5px solid white; */
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   transform-origin: bottom;
