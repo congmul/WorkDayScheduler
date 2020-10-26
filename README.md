@@ -4,6 +4,13 @@ This is Work Day Scheduler. This app allow a user to save events for each hour o
 
 Link : https://congmul.github.io/WorkDayScheduler/
 
+Tech/framework used:
+1. HTML
+2. CSS
+3. Bootstrap
+4. JavaScript
+5. jQuery
+
 How to work
 1. Enter a event in a time block.
 2. Save the event in local storage when clicking save button on the right.
@@ -12,3 +19,6 @@ How to work
    
 
 <img src = "./assets/WorkDayScheduler.gif" width = "600">
+
+Contributor
+1. Jehyun Jung : congmul@hotmail.com
